@@ -1,0 +1,54 @@
+/* src/App.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global Variables */
+  :root {
+    --primary-color: #ff4560; /* Example bold pink/red */
+    --secondary-color: #007bff; /* Example blue */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --bg-light: #fff;
+    --bg-dark: #1a1a1a;
+    --light-gray: #eee;
+    --dark-gray: #666;
+    --font-family-primary: 'Inter', sans-serif; /* You might import a Google Font later */
+  }
+  
+  body {
+    font-family: var(--font-family-primary);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* Basic utilities / common classes */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-padding {
+    padding: 80px 0; /* Consistent vertical padding for sections */
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }

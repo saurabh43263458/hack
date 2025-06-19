@@ -1,0 +1,396 @@
+/* src/components/FeaturesSection/FeaturesSection.module.css */
+
+.featuresSection {
+    background-color: var(--bg-light);
+    background: linear-gradient(180deg, var(--bg-light) 0%, var(--light-gray) 100%);
+    text-align: center;
+    overflow: hidden;
+    padding: 80px 20px; /* Add more vertical padding for breathing room */
+}
+
+.sectionTitle {
+    font-size: 3.5em; /* Even larger, more impactful */
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 60px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.05); /* Subtle text shadow for depth */
+}
+
+.tabsContainer {
+    max-width: 1200px; /* Wider container */
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Stronger, more elegant shadow */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabsNav {
+    display: flex;
+    justify-content: center;
+    padding: 20px 30px; /* More padding */
+    background-color: #f0f2f5; /* Lighter, subtle background */
+    border-bottom: 1px solid #e0e0e0;
+    flex-wrap: wrap;
+    gap: 15px; /* More space between buttons */
+}
+
+.tabButton {
+    background: none;
+    border: none;
+    padding: 15px 30px; /* Larger hit area */
+    font-size: 1.1em; /* Slightly larger font */
+    font-weight: 700; /* Bolder text */
+    color: var(--dark-gray);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px; /* More space between icon and text */
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 10px; /* More rounded buttons */
+    text-transform: uppercase; /* Make tab labels uppercase */
+    letter-spacing: 0.5px;
+}
+.tabButton:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 69, 96, 0.08); /* More noticeable hover background */
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+.tabButton.active {
+    color: var(--primary-color);
+    background-color: rgba(255, 69, 96, 0.15); /* Stronger active background */
+    box-shadow: 0 4px 15px rgba(255, 69, 96, 0.2); /* More prominent active shadow */
+    transform: translateY(-2px); /* Maintain lift when active */
+}
+.tabButton.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 30px); /* Adjust width for more prominent underline */
+    height: 5px; /* Thicker indicator */
+    background-color: var(--primary-color);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    opacity: 1;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+.tabButton:not(.active)::after {
+    width: 0;
+    opacity: 0;
+}
+
+.tabIcon {
+    width: 30px; /* Even larger icons */
+    height: 30px;
+    filter: grayscale(100%) brightness(0.8); /* Desaturate and dim non-active icons */
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+.tabButton:hover .tabIcon {
+    filter: grayscale(0%) brightness(1); /* Full color on hover too */
+    transform: scale(1.05); /* Subtle icon zoom on hover */
+}
+.tabButton.active .tabIcon {
+    filter: grayscale(0%) brightness(1); /* Full color for active icons */
+    transform: scale(1.1); /* Slightly more prominent zoom for active */
+}
+
+.tabContentArea {
+    padding: 60px; /* More generous padding for content */
+    position: relative;
+    min-height: 500px; /* Ensure ample space */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--bg-light); /* Ensure content area has a background */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+/* Feature Content Styling (from FeaturesTabContent.module.css or similar) */
+.featureContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* More space between text and image/logos */
+    width: 100%;
+    max-width: 1000px; /* Wider content area */
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .featureContent {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.featureDetails {
+    flex: 1;
+    max-width: 600px; /* Allow text to be wider */
+}
+
+@media (min-width: 768px) {
+    .featureDetails {
+        padding-right: 50px; /* More space before image */
+    }
+}
+
+.featureDetails h3 {
+    font-size: 2.5em; /* Larger heading */
+    font-weight: 800; /* Bolder */
+    color: var(--text-dark);
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.featureDetails p {
+    font-size: 1.15em; /* Slightly larger body text */
+    color: var(--dark-gray);
+    line-height: 1.8;
+    margin-bottom: 40px; /* More space */
+}
+
+.detailList {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px; /* More space between list items */
+    text-align: left;
+    font-size: 1em; /* Slightly larger list font */
+    color: var(--dark-gray);
+}
+
+@media (min-width: 500px) {
+    .detailList {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.detailList li {
+    background-color: #f7f7f7; /* Lighter background for list items */
+    padding: 12px 20px; /* More padding */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow for list items */
+    transition: transform 0.2s ease;
+}
+.detailList li:hover {
+    transform: translateY(-3px); /* Lift on hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.detailList li::before {
+    content: '✔';
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2em; /* Larger checkmark */
+}
+
+.featureImageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.featureImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* More rounded image corners */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Stronger image shadow */
+    display: block;
+    object-fit: contain;
+}
+
+/* NEW: Styles for the Integrations Logo Grid */
+.integrationLogosGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between logos */
+    padding: 30px 0; /* Vertical padding */
+    max-width: 900px; /* Control max width of the grid */
+    margin: 0 auto;
+}
+
+.integrationLogoItem {
+    background-color: #fff; /* White background for each logo card */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Soft shadow for each logo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px; /* Ensure consistent height for logo boxes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.integrationLogoItem:hover {
+    transform: translateY(-8px) scale(1.03); /* Lift and subtle zoom on hover */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Enhanced shadow on hover */
+}
+
+.integrationLogoItem img {
+    max-width: 80%; /* Ensure logos fit within their boxes */
+    max-height: 70px; /* Control max height */
+    object-fit: contain;
+    filter: grayscale(0%); /* Ensure logos are in full color */
+    opacity: 0.9; /* Slightly less than full opacity for subtle look */
+    transition: opacity 0.3s ease;
+}
+
+.integrationLogoItem:hover img {
+    opacity: 1; /* Full opacity on hover */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) { /* Adjust breakpoint for larger tablets/small laptops */
+    .sectionTitle {
+        font-size: 3em;
+        margin-bottom: 50px;
+    }
+    .tabsContainer {
+        border-radius: 18px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+    .tabButton {
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+    .tabContentArea {
+        padding: 40px;
+        min-height: 480px;
+    }
+    .featureDetails h3 {
+        font-size: 2.2em;
+    }
+    .featureDetails p {
+        font-size: 1.05em;
+    }
+    .integrationLogosGrid {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .featuresSection {
+        padding: 60px 15px;
+    }
+    .sectionTitle {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    .tabsNav {
+        padding: 15px 15px;
+        gap: 10px;
+    }
+    .tabButton {
+        font-size: 0.9em;
+        padding: 10px 20px;
+        gap: 8px;
+    }
+    .tabIcon {
+        width: 24px;
+        height: 24px;
+    }
+    .tabContentArea {
+        padding: 30px;
+        min-height: auto;
+    }
+    .featureContent {
+        flex-direction: column-reverse; /* Image above text on small screens */
+        gap: 40px;
+    }
+    .featureDetails {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .featureDetails h3 {
+        font-size: 2em;
+    }
+    .featureDetails p {
+        font-size: 1em;
+    }
+    .detailList {
+        text-align: center;
+        justify-content: center;
+        gap: 12px;
+    }
+    .detailList li {
+        padding: 10px 15px;
+    }
+    .integrationLogosGrid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .integrationLogoItem {
+        padding: 15px;
+        min-height: 80px;
+    }
+    .integrationLogoItem img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 480px) { /* Even smaller phones */
+    .sectionTitle {
+        font-size: 2em;
+    }
+    .tabsNav {
+        padding: 10px;
+        gap: 5px;
+    }
+    .tabButton {
+        font-size: 0.85em;
+        padding: 8px 12px;
+        gap: 5px;
+    }
+    .tabIcon {
+        width: 20px;
+        height: 20px;
+    }
+    .tabContentArea {
+        padding: 20px;
+    }
+    .featureDetails h3 {
+        font-size: 1.6em;
+    }
+    .featureDetails p {
+        font-size: 0.9em;
+    }
+    .integrationLogosGrid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+        gap: 15px;
+    }
+}
+
+/* Ensure the CTA button matches global styling from App.css or HeroSection */
+.bookMeetingButton {
+    margin-top: 60px;
+    padding: 18px 35px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    box-shadow: 0 8px 20px rgba(255, 69, 96, 0.4);
+    transition: all 0.3s ease;
+}
+
+.bookMeetingButton:hover {
+    background-color: #e63d56;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255, 69, 96, 0.5);
+}

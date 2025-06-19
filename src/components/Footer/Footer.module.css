@@ -1,0 +1,72 @@
+/* src/components/Footer/Footer.module.css */
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--light-gray);
+    padding: 50px 0 30px;
+    font-size: 0.9em;
+  }
+  
+  .footerContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .footerBrand h3 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+  
+  .footerBrand p {
+    color: var(--dark-gray);
+  }
+  
+  .footerLinks h4, .footerSocial h4 {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 1.1em;
+  }
+  
+  .footerLinks ul {
+    padding: 0;
+  }
+  
+  .footerLinks li {
+    margin-bottom: 8px;
+  }
+  
+  .footerLinks a {
+    color: var(--dark-gray);
+    transition: color 0.2s ease;
+  }
+  .footerLinks a:hover {
+    color: var(--primary-color);
+  }
+  
+  .socialIcons a {
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: var(--dark-gray);
+    transition: color 0.2s ease;
+  }
+  .socialIcons a:hover {
+    color: var(--primary-color);
+  }
+  
+  @media (max-width: 768px) {
+    .footerContent {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .footerBrand, .footerLinks, .footerSocial {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .socialIcons {
+      justify-content: center;
+    }
+  }

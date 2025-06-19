@@ -1,0 +1,48 @@
+/* src/components/Loader/Loader.module.css */
+
+.loaderContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-dark); /* Dark background from global variables */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of everything */
+    color: var(--text-light); /* White text */
+    font-family: var(--font-family-primary);
+  }
+  
+  .spinner {
+    width: 200px; /* Width of the progress bar container */
+    height: 8px; /* Height of the progress bar */
+    background-color: rgba(255, 255, 255, 0.2); /* Light grey track */
+    border-radius: 4px;
+    overflow: hidden; /* Ensures the progress bar stays within bounds */
+    margin-bottom: 20px;
+  }
+  
+  .progressBar {
+    height: 100%;
+    background-color: var(--primary-color); /* Primary color for the progress */
+    border-radius: 4px;
+    /* Width is animated by Framer Motion directly */
+  }
+  
+  .percentage {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--primary-color); /* Match primary color */
+  }
+  
+  @media (max-width: 768px) {
+    .spinner {
+      width: 150px;
+    }
+    .percentage {
+      font-size: 1.5em;
+    }
+  }

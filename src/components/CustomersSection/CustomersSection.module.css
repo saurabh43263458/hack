@@ -1,0 +1,247 @@
+/* src/components/CustomersSection/CustomersSection.module.css */
+
+.customersSection {
+    background-color: var(--bg-light); /* Assuming a light background for this section */
+    padding: 100px 20px; /* More padding for spacious feel */
+    text-align: center;
+    overflow: hidden;
+}
+
+.sectionTitle {
+    font-size: 3.5em; /* Prominent title */
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 70px; /* Space before grid */
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.03); /* Subtle depth */
+}
+
+.testimonialsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for cards */
+    gap: 40px; /* More space between testimonials */
+    max-width: 1200px; /* Max width for the grid */
+    margin: 0 auto 80px auto; /* Center grid, more space before button */
+    padding: 0 20px; /* Inner padding for the grid area */
+}
+
+.testimonialCard {
+    background-color: #ffffff; /* White background for each testimonial */
+    border-radius: 20px; /* More rounded corners */
+    padding: 35px; /* Generous padding inside card */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Soft, elegant shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to start */
+    text-align: left;
+    min-height: 250px; /* Ensure consistent card height */
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.testimonialCard:hover {
+    transform: translateY(-8px); /* Lift card on hover */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.quoteIcon {
+    font-size: 4em; /* Larger quote icon */
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 10px;
+    position: absolute; /* Position it absolutely for more control */
+    top: 15px;
+    left: 20px;
+    opacity: 0.2; /* Make it subtle */
+    font-family: serif; /* Classic quote style */
+    z-index: 1; /* Behind text */
+}
+
+.quoteText {
+    font-size: 1.15em;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    position: relative; /* To ensure it's above the quote icon */
+    z-index: 2;
+    padding-top: 20px; /* Space for the absolute quote icon */
+}
+
+.authorInfo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto; /* Push author info to the bottom */
+    width: 100%;
+}
+
+.authorLogo {
+    width: 60px; /* Larger logo for impact */
+    height: 60px;
+    border-radius: 50%; /* Make it round */
+    object-fit: contain; /* Ensure logo fits without distortion */
+    border: 2px solid var(--light-gray); /* Subtle border */
+    padding: 5px; /* Padding inside border */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Soft shadow */
+}
+
+.authorName {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+}
+
+.authorTitle {
+    font-size: 0.9em;
+    color: var(--dark-gray);
+}
+
+
+/* --- Button Styles Enhancement --- */
+/* Re-using secondaryCta and adding specific styles for meetCustomersBtn */
+
+/* Assuming these exist in your global styles or similar. If not, define them here. */
+.secondaryCta {
+    background: none;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 16px 33px; /* Base padding */
+    border-radius: 10px; /* More rounded */
+    font-size: 1.15em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    text-decoration: none; /* If it's an anchor tag */
+    display: inline-block; /* Essential for padding and sizing */
+}
+
+.secondaryCta:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: 0 8px 20px rgba(255, 69, 96, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Specific styles for the "Meet Our Customers" button if needed */
+.meetCustomersBtn {
+    margin-top: 50px; /* Space above button */
+    padding: 20px 40px; /* Larger button */
+    font-size: 1.25em; /* Larger text */
+    border-width: 3px; /* Thicker border */
+    border-radius: 12px; /* Even more rounded */
+    box-shadow: 0 5px 15px rgba(255, 69, 96, 0.2); /* Initial subtle shadow */
+}
+
+.meetCustomersBtn:hover {
+    transform: translateY(-5px); /* More pronounced lift on hover */
+    box-shadow: 0 12px 30px rgba(255, 69, 96, 0.5); /* Stronger shadow on hover */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .sectionTitle {
+        font-size: 3em;
+        margin-bottom: 60px;
+    }
+    .testimonialsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 70px;
+    }
+    .testimonialCard {
+        padding: 30px;
+        min-height: 240px;
+    }
+    .quoteText {
+        font-size: 1.1em;
+    }
+    .authorLogo {
+        width: 55px;
+        height: 55px;
+    }
+    .authorName {
+        font-size: 1.05em;
+    }
+    .secondaryCta {
+        padding: 14px 30px;
+        font-size: 1.1em;
+    }
+    .meetCustomersBtn {
+        padding: 18px 35px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .customersSection {
+        padding: 80px 15px;
+    }
+    .sectionTitle {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+    .testimonialsGrid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 25px;
+        margin-bottom: 50px;
+        padding: 0 10px;
+    }
+    .testimonialCard {
+        padding: 25px;
+        min-height: auto; /* Allow height to adjust naturally */
+    }
+    .quoteIcon {
+        font-size: 3.5em;
+        top: 10px;
+        left: 15px;
+    }
+    .quoteText {
+        font-size: 1em;
+        padding-top: 15px;
+    }
+    .authorLogo {
+        width: 50px;
+        height: 50px;
+    }
+    .authorName {
+        font-size: 1em;
+    }
+    .authorTitle {
+        font-size: 0.85em;
+    }
+    .secondaryCta {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .meetCustomersBtn {
+        padding: 16px 30px;
+        font-size: 1.1em;
+        border-width: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sectionTitle {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .testimonialsGrid {
+        gap: 20px;
+    }
+    .testimonialCard {
+        padding: 20px;
+    }
+    .quoteIcon {
+        font-size: 3em;
+    }
+    .quoteText {
+        font-size: 0.95em;
+    }
+    .meetCustomersBtn {
+        padding: 14px 25px;
+        font-size: 1em;
+    }
+}
