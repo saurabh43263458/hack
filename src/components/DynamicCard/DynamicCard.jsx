@@ -11,7 +11,7 @@ function DynamicCard({ data }) {
 
   return (
     <motion.div
-      key={data.id} // Essential for AnimatePresence to work
+      key={data.id}
       className={styles.dynamicCard}
       variants={cardVariants}
       initial="initial"
@@ -23,7 +23,13 @@ function DynamicCard({ data }) {
         <h3>{data.title}</h3>
       </div>
       <div className={styles.cardBody}>
-        {data.image && <img src={data.image} alt={data.title} className={styles.cardImage} />}
+        {data.imageSrc && (
+          <img
+            src={data.imageSrc}
+            alt={data.title}
+            className={styles.cardImage}
+          />
+        )}
         <p className={styles.cardValue}>{data.value}</p>
       </div>
     </motion.div>

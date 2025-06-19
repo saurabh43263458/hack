@@ -73,8 +73,8 @@ function HeroSection() {
         <motion.h1 className={styles.headline} variants={itemVariants}>
           Create{' '}
           {/* AnimatePresence manages the entering and exiting animations of the highlight word */}
-          <AnimatePresence mode="wait" initial={false}> {/* initial={false} prevents exit animation on first render */}
-            {/* highlightWrapper provides a consistent space for the changing word */}
+          <AnimatePresence mode="wait" initial={false}> 
+           
             <div className={styles.highlightWrapper}>
               <motion.span
                 key={currentCard.id} // Key changes to re-trigger the animation

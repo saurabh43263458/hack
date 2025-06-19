@@ -35,7 +35,7 @@ function FeaturesSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <img src={feature.icon} alt={feature.name} className={styles.tabIcon} />
+            
               {feature.name}
             </motion.button>
           ))}
